@@ -1,0 +1,22 @@
+{
+  
+  "configurations": [
+      {
+        "name": "Linux",
+        "compilerPath": "/usr/bin/g++",
+        "includePath": ["/usr/local/include"],
+        "intelliSenseMode": "gcc-x64",
+        "configurationProvider": "ms-vscode.cmake-tools",
+        "defines": [],
+        "forcedInclude": [],
+        "cStandard": "c17",
+        "cppStandard": "c++20",
+        "browse": {
+          "path": ["${workspaceFolder}/**", "${workspaceFolder}/../llvm-project/llvm/lib/**"],
+          "limitSymbolsToIncludedHeaders": false
+        }
+      }
+  ],
+
+  "version": 4
+}
