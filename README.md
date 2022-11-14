@@ -4,7 +4,7 @@ This project is aimed at creating a machine learning heuristics to enhance llvm'
 **Table of contents:**
 ---
 > 1. [Getting Started](#gettingStarted)  
->       1.1 [Building the Project](#buidlingProject)  
+>       1.1 [Building the Project](#buildingProject)  
 >       1.2 [Running / Debugging Project](#runningProject)  
 >       1.3 [Important Notes](#importantNotes)  
 ---
@@ -113,5 +113,5 @@ fi
 
 ninja install -j$nCores | tee ninja.log
 ```
- Or, if you've already built llvm, modify the `.vscode/c_cpp_cproperties.json` and replace `${workspaceFolder}/../llvm-project/llvm/lib/**` with the path to llvm's source code lib folder.
+ Or, if you've already built llvm, modify the `.vscode/c_cpp_cproperties.json` file and replace `${workspaceFolder}/../llvm-project/llvm/lib/**` with the path to llvm's source code lib folder.
 
