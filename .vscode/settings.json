@@ -15,4 +15,8 @@
 
     // Note: Controlls verbosity of C/C++ output log. Set to Debug for full logging
     "C_Cpp.loggingLevel": "Warning",
+    "cSpell.words": [
+        "Vectorize",
+        "Vectorizer"
+    ],
 }
