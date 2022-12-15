@@ -1,2 +1,9 @@
-build/**
-.cache/**
+**/build/**
+**/.cache/**
+**/__pycache__/**
+
+# Original neuroVectorizer Repo
+neuroVectorizer/
+
+NeuroSlp/*_garbage_*/**
+NeuroSlp/slpBinCache/**
