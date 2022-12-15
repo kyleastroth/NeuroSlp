@@ -14,7 +14,7 @@
 
 
 # Configuration is relative to this script
-SCRIPT_LOC=$(realpath "$0")
+SCRIPT_LOC=$(realpath "${BASH_SOURCE[0]}")
 SCRIPT_PATH="$(dirname "$SCRIPT_LOC")"
 . $SCRIPT_PATH/configure.sh
 
@@ -49,9 +49,10 @@ if (( SKIP_C_PREPROCESS == 0 )); then
   echo RAW_DATA_FILE: ${RAW_DATA_FILE} 
   echo DATA_ROOT: ${DATA_ROOT} 
   echo TEST_DATA_FILE: ${TEST_DATA_FILE} 
+  echo NeuroVectorizer_DIR: ${NeuroVectorizer_DIR} 
 
 
-  ${PYTHON} "${SCRIPT_PATH}/extract-c.py" --dir "${SOURCE_DIR}" -outdir "${DATA_ROOT}" ${SKIP_DECLS} -maxleaves ${MAX_LEAVES} --num_threads ${NUM_THREADS} --clang-path "${CLANG_PATH}" --include-path "${SOURCE_DIR}" > "${RAW_DATA_FILE}" 2>> "${DATA_ROOT}/stderr.txt"
+  ${PYTHON} "${NeuroVectorizer_DIR}/preprocess/extract-c.py" --dir "${SOURCE_DIR}" -outdir "${DATA_ROOT}" ${SKIP_DECLS} -maxleaves ${MAX_LEAVES} --num_threads ${NUM_THREADS} --clang-path "${CLANG_PATH}" --include-path "${SOURCE_DIR}" > "${RAW_DATA_FILE}" 2>> "${DATA_ROOT}/stderr.txt"
   echo "Finished extracting paths from data set"
   sort -u -R -S ${MEM_PERCENT}% --parallel ${NUM_PROCESSORS} --output=${SORTED_DATA_FILE} ${RAW_DATA_FILE}
 

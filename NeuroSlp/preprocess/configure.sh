@@ -48,6 +48,9 @@
 # PYTHON - python3 interpreter alias.
 ###########################################################
 
+SCRIPT_LOC=$(realpath "${BASH_SOURCE[0]}")
+SCRIPT_PATH="$(dirname "$SCRIPT_LOC")"
+
 # External dependencies
 CLANG_PATH=/usr/lib/llvm-14/lib/libclang.so.1
 
@@ -61,13 +64,13 @@ EMPTY_WORKING_DIR=1
 SKIP_C_PREPROCESS=0
 
 # CODE2VEC_LOC - should be the location of base codevec
-CODE2VEC_LOC=$(realpath ../code2vec)
+CODE2VEC_LOC=$(realpath ${SCRIPT_PATH}/../code2vec)
 
 # SOURCE_DIR - top level folder for C source files
-SOURCE_DIR=$(realpath ../slpDataset/full)
+SOURCE_DIR=$(realpath ${SCRIPT_PATH}/../slpDataset/full)
 
 # NeuroDectorier DIR
-NeuroVectorizer_DIR=$(realpath ..)
+NeuroVectorizer_DIR=$(realpath ${SCRIPT_PATH}/../)
 
 # Prevent RAY from throwing Out of Memory error
 export RAY_DISABLE_MEMORY_MONITOR=1
