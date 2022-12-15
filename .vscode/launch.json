@@ -5,6 +5,37 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "python Launch",
+            "python": "/home/sam/anaconda3/bin/python3",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+                                   
+            // "args": [
+            //     "--dir",
+            //     "/mnt/eecs583/FinalProject/neuro-vectorizer/training_data",
+            //     "-outdir" ,
+            //     "/mnt/eecs583/FinalProject/neuro-vectorizer/code2vec/data/for_loops",
+            //     "-maxleaves",
+            //     "48" ,
+            //     "--num_threads" ,
+            //     "1" ,
+            //     "--clang-path" ,
+            //     "/home/sam/anaconda3/lib/libclang-cpp.so" ,
+            //     "--include-path" ,
+            //     "/mnt/eecs583/FinalProject/neuro-vectorizer/training_data"
+            // ],
+
+            "cwd": "${fileDirname}",
+
+            "presentation": {
+                "hidden": false,
+                "group": "Debug",
+                "order": 1
+            },
+        },
+
+        {
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",

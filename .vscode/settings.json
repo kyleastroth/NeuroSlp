@@ -10,8 +10,19 @@
     },
     "files.associations": {
         "*.logcat": "logcat",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
+        "header.h": "c",
+        "time.h": "c"
     },
+    
+    "remote.WSL.fileWatcher.polling": false,
+    "remote.WSL.fileWatcher.pollingInterval": 5000,
+    "files.watcherExclude": {
+        "**/**/*": true,
+        "**/slpTrainingResults/**": true,
+        "**/slpTrainingResults/*": true,
+    },
+
 
     // Note: Controlls verbosity of C/C++ output log. Set to Debug for full logging
     "C_Cpp.loggingLevel": "Warning",
