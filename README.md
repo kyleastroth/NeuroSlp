@@ -1,117 +1,150 @@
 # Welcome to the NeuroSLP Repo!
-This project is aimed at creating a machine learning heuristics to enhance llvm's super word level parallelism (SLP).
-<!-- TODO: Update This!!!
+
 **Table of contents:**
 ---
-> 1. [Getting Started](#gettingStarted)  
->       1.1 [Building the Project](#buildingProject)  
->       1.2 [Running / Debugging Project](#runningProject)  
->       1.3 [Important Notes](#importantNotes)  
+> 1. [About NeuroSLP](#aboutNeuroSlp)  
+>       1.1 [Download Links](#downloadLinks)  
+>       1.2 [The Team](#theTeam)  
+>  
+> 2. [Getting Started](#gettingStarted)  
+>       2.1 [Dependencies](#dependencies)  
+>       2.2 [Configuration](#configuration)  
+>       2.3 [Training](#training)  
+>       2.4 [Testing](#testing)  
+>       2.5 [Important Notes](#importantNotes)  
+---
+
+
+<a name="aboutNeuroSlp"></a>
+## Section 1 - About NeuroSLP
+NeuroSLP extends the work done in [NeuroVectorizer](https://github.com/intel/neuro-vectorizer) and enhance llvm's parameter selection for Superword Level Parallelism (SLP).
+
+NeruoSLP uses deep reinforcement learning to estimate the optimal LLVM `slp-max-reg-size` and `slp-threshold` parameters source code.  
+
+From our evaluation of 1,000 programs NeuroSLP is capable of improving runtime performance by over 6.5% and up to 54% in select applications.  
+
+
+<br>
+
+<a name="downloadLinks"></a>
+### Section 1.1 - Download Links
+
+Our project is available to download with the following links:
+- [Research Paper](Report/NeuroSLP.pdf)
+- [Presentation Slides](Report/NeuroSLP%20Final%20Presentation.pdf)
+- [Test Results (Excel)](Report/NeuroSLP%20Training%20Results.xlsx)
+- [Project Proposal](Report/EECS%20583%20Project%20Proposal.pdf)
+
+<br>
+
+<a name="theTeam"></a>
+### Section 1.2 - The Team
+
+|                |                    |                                                           |                                            |                                       |
+| -              | -                  | -                                                         | -                                          | -                                     |
+| Kyle Astroth   | kastroth@umich.edu | [LinkedIn](https://www.linkedin.com/in/kyle-astroth/)     | [GitHub](https://github.com/kyleastroth)   | [Website](https://kastroth.github.io) |
+| Sam Gonzalez   | samgonza@umich.edu | [LinkedIn](https://www.linkedin.com/in/samgonza/)         | [GitHub](https://github.com/samrg123)      | [Website](https://samrg123.com/)      |
+| Carson Hoffman | hoffcar@umich.edu  | [LinkedIn](https://linkedin.com/in/carson-hoffman)        | [GitHub](https://github.com/CarsonHoffman) |                                       |
+| Xiangyu Qin    | qinx@umich.edu     | [LinkedIn](https://linkedin.com/in/xiangyu-qin-503783187) | [GitHub](https://github.com/tommy2022)     |                                       |
+
+
+<br>
+
 ---
 
 <br>
 
 <a name="gettingStarted"></a>
-## Section 1 - Getting Started
-This section will instruct you on how to setup, build and debug the project. 
+## Section 2 - Getting Started
+
+In this section we'll go through everything you'll need to know about setting up, training, and testing NeuroSLP.
 
 <br>
 
-<a name="buildingProject"></a>
-### Section 1.1 - Building the project
-This project was designed to be built with [VSCode](https://code.visualstudio.com/) using Linux. In theory it should be possible to build this project using other operating systems with minor changes to the '.vscode' files, but doing so hasn't been tested.
+<a name="dependencies"></a>
+### Section 2.1 - Dependencies
 
-To build the project you will need to have either downloaded or built the clang version 16.0.0 project from llvm. You can use [this](https://llvm.org/docs/CMake.html) guide if you plan on building clang which will need to be done if you want enable clang debugging symbols.
-
-You will also need to install [CMake](https://cmake.org/). Assuming you are using a debian based Linux distribution this can be achieved with following command:
+NeuroSLP has the following dependencies:
 ```bash
-sudo apt-get install cmake
+# TF2
+pip install tensorflow
+
+# Ray
+pip install ray==0.8.4
+
+# RLlib
+pip install ray[rllib]==0.8.4
+
+# LLVM. Currently tested with clang 14.0.0.1
+sudo apt-get install clang-14
+
+# Clang for python
+pip install clang
+
 ```
 
-Finally, you need to install the following VSCode the [Command Variable](https://marketplace.visualstudio.com/items?itemName=rioj7.command-variable) VSCode extension in order to debug the project. The following extensions are also recommended, but not need:
--  [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
-- [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
-- [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake)
-- [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
-
-Once those dependencies have been installed. Clone the repo with the following command
-```bash 
-git clone https://github.com/samrg123/eecs583.git
-```
-
-Open `eecs583` folder in VSCode and build the project by pressing `Shift+CTRL+B` or running the default build command from the command pallet.
+You may also need to install the Anaconda depending on your development environment.
+For more detailed instructions please refer to NeuroVectorizer's extended documentation [here](https://github.com/intel/neuro-vectorizer/blob/master/detailedinstructions.md). 
 
 <br>
 
-<a name="runningProject"></a>
-### Section 1.2 - Running/Debugging the project
-The project can then be launched by running `eecs583/build/launch.sh` or debugged via gdb and via the '(gdb) Launch' Command in VSCode 
+<a name="configuration"></a>
+### Section 2.2 - Configuration
+
+Configuration is mostly achieved by modifying `NeuroSlp/preprocess/configure.sh`.
+Some important variables you may need to modify are:
+> | Varible                      | Description                                            |
+> | -                            | -                                                      |
+> | `CLANG_PATH`                 | Path to libclang                                       |
+> | `CLANG_BIN_PATH`             | Path to clang binary                                   |
+> | `SOURCE_DIR`                 | Path to files used to generate for code2vec histograms |
+> | `TEST_SHELL_COMMAND_TIMEOUT` | Timeout used while compiling programs                  |
+
+<br>
+
+<a name="training"></a>
+### Section 2.3 - Training
+
+Training of NeuroSLP is done via the `NeuroSlp/slpTrain.sh` script. By default NeuroSLP is configured to use the `NeuroSlp/slpDataset/large` dataset for training and outputs training results to `NeuroSlp/slpTrainingResults`.
+
+To configure the training dataset and other hyperparameters you will need to modify `NeuroSlp/slpAutovec.py`.
+
+For more information on available hyperparameters visit the documentation of Ray [here](https://docs.ray.io/en/releases-0.8.4/rllib-training.html#common-parameters). And the documentation for PPO [here](https://docs.ray.io/en/releases-0.8.4/rllib-algorithms.html?#codecell1).  
+
+<br>
+
+<a name="testing"></a>
+### Section 2.4 - Testing
+
+Testing of NeuroSLP is done via the `NeuroSlp/slpTest.sh` script. By default NeuroSLP is configured to use the `NeuroSlp/slpDataset/testLarge1000` dataset for testing and outputs a summary of training results to `NeuroSlp/slpTestResults_trainLarge_testLarge1000.out`.
+
+To change the test dataset and output path you'll have to modify the `NeuroSlp/slpTest.sh` script. To modify other hyperparameters you'll have to modify `NeuroSlp/slpTempRollout.py` instead. 
+
+In addition `NeuroSlp/slpTempRollout.py` can be used to continue training the NeuroSLP from a given checkpoint. For more information on how to use `slpTempRollout.py` run `python slpTempRollout.py --help` and visit the documentation provided by NeuroVectorizer [here](https://github.com/intel/neuro-vectorizer/blob/master/README.md). 
+
+Please refer to the documentation linked to in [Section 2.3](#training) for more information on the available hyperpameters in Ray. 
+
 
 <br>
 
 <a name="importantNotes"></a>
-### 1.3 -  Some important notes on debugging clang/llvm
-If you would like to link clang's source code in the vscode project you can clone llvm in a folder next to the  `eecs583` and use the following script to build llvm.
-```bash
-#!/bin/bash 
+### 2.5 -  Important Notes
 
-nCores=6
-skipCmake=0
-useWerror=0
+Below are some important notes to keep in mind about the project in no particular order are:
+- The code2vec embeddings of programs are generated only first invokation of `NeuroSlp/slpTrain.sh`. If you want to regenerate them delete `NeuroSlp/code2vec/data`  
+If you would like to add additional training/test programs for the
+- `NeuroSlp/slpBinCache/O3_runtimes.pkl` caches the current runtimes of programs compiled with LLVM's default parameters across multiple runs of training and testing. If you want to recompute the runtimes be sure to delete the file.
+- NeuroSlp comes with a pretrained version of code2vec embedding using the files in `NeuroSlp/slpDataset/full`. This embedding is stored in `NeuroSlp/slpDataset/*/obs_encodings.pkl`. If you would like to produce a new embedding/add to the dataset delete this file and run `NuroSlp/slpTrain.sh`. This will produce a new `obs_encoding.pkl` in `NeuroSlp/new_garbage_*`.   
+- If you want to use another model in the embedding generator (other than code2vec), you need to modify get_obs function in `NeuroSlp/envs/neuroslp.py`. 
 
-mountFolder=/mnt/eecs583
+<br>
 
-# Projects to build
-llvmProjects=clang;lld;lldb;pstl;cross-project-tests
-
-# Projects not built
-## bolt
-## llgo
-## polly
-## openmp
-## libclc
-## parallel-libs
-## debuginfo-tests
-## clang-tools-extra
-## libc
-## libcxx
-## libcxxabi
-## libunwind
-## compiler-rt
-
-# libraries to build with newly build clang compiler
-llvmRuntimes=compiler-rt;libc;libcxx;libcxxabi;libunwind
-
-# buildType=RelWithDebInfo
-buildType=Debug
-
-function error {
-    echo $1
-    exit 1
-}
-
-# Mount project file to non-whitespace path for build 
-if [ ! "$(ls -A $mountFolder)" ]; then
-    echo "Mounting Homework Folder to '$mountFolder'"
-    sudo mount --bind "$(pwd)/../" /mnt/eecs583/
-fi
-
-rm -r build > /dev/null
-mkdir build
-cd build
-
-if (($skipCmake == 0)); then
-
-    cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_BUILD_TYPE=$buildType -DLLVM_OPTIMIZED_TABLEGEN=ON -DLLVM_ENABLE_PROJECTS="$llvmProjects" -DLLVM_ENABLE_RUNTIMES="$llvmRuntimes" -DLLVM_TARGETS_TO_BUILD="X86;ARM;AArch64" -DLLVM_ENABLE_EH=ON -DLLVM_ENABLE_RTTI=ON -DLLVM_ENABLE_WERROR=$useWerror -DLLVM_USE_LINKER=bfd -DLLVM_PARALLEL_COMPILE_JOBS=$nCores -DLLVM_PARALLEL_LINK_JOBS=$nCores -G "Ninja" ../llvm | tee cmake.log
-
-    result=${PIPESTATUS[0]}
-fi
-
-if (($result != 0)); then
-    error "CMAKE BUILD FAILED"
-fi
-
-ninja install -j$nCores | tee ninja.log
-```
- Or, if you've already built llvm, modify the `.vscode/c_cpp_cproperties.json` file and replace `${workspaceFolder}/../llvm-project/llvm/lib/**` with the path to llvm's source code lib folder.
- -->
+NeuroSLP also comes with a variety of helper programs that may be of use to you:
+> | Program                                  | Description                                            |
+> | -                                        | -                                                      |
+> | `NeuroSlp/decompileDir.sh`               | Takes in a directory argument and decompiles every `.o` files in it into assembly |
+> | `NeuroSlp/diffRuntimeAsm.py`             | Takes in a directory argument and diffs each  `.s` file in it ignoring code not part of the example function. |
+> | `NeuroSlp/slpBruteForceRuntimes.py`      | Evaluates the runtime of every combination of `slp-max-reg-size` and `slp-threshold` |
+> | `NeuroSlp/unpackPickle.py`               | Takes in a pkl path argument and outputs a human readable json version of it |
+> | `NeuroSlp/slpDataset/preprocessLoops.py` | Takes in input and output directory arguments. Is used to converts all NeuroVectorizer formatted `.c` test programs in the input directory into NeuroSLP compatible programs. |
+> | `NeuroSlp/slpDataset/makeDataset.py`     | Takes in a size, input, and output directory argument. Is used to creates random test/training datasets |
