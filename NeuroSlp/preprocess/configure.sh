@@ -64,7 +64,6 @@ SKIP_C_PREPROCESS=0
 CODE2VEC_LOC=$(realpath ../code2vec)
 
 # SOURCE_DIR - top level folder for C source files
-# Note: Don't know why, but this can't be real_path
 SOURCE_DIR=$(realpath ../slpDataset/full)
 
 # NeuroDectorier DIR
