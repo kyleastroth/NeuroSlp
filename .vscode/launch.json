@@ -6,26 +6,11 @@
     "configurations": [
         {
             "name": "python Launch",
-            "python": "/home/sam/anaconda3/bin/python3",
+            "python": "~/anaconda3/bin/python3",
             "type": "python",
             "request": "launch",
             "program": "${file}",
                                    
-            // "args": [
-            //     "--dir",
-            //     "/mnt/eecs583/FinalProject/neuro-vectorizer/training_data",
-            //     "-outdir" ,
-            //     "/mnt/eecs583/FinalProject/neuro-vectorizer/code2vec/data/for_loops",
-            //     "-maxleaves",
-            //     "48" ,
-            //     "--num_threads" ,
-            //     "1" ,
-            //     "--clang-path" ,
-            //     "/home/sam/anaconda3/lib/libclang-cpp.so" ,
-            //     "--include-path" ,
-            //     "/mnt/eecs583/FinalProject/neuro-vectorizer/training_data"
-            // ],
-
             "cwd": "${fileDirname}",
 
             "presentation": {
@@ -33,88 +18,6 @@
                 "group": "Debug",
                 "order": 1
             },
-        },
-
-        {
-            "name": "(gdb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-
-            // "preLaunchTask": "Clean & Build",
-            "preLaunchTask": "Prepare Launch",
-
-            "presentation": {
-                "hidden": false,
-                "group": "Debug",
-                "order": 1
-            },
-
-            "MIMode": "gdb",
-            "filterStderr": false,
-            "filterStdout": false,
-
-            "cwd": "${input:HW_LAUNCH_CWD}",
-
-            "stopAtEntry": false,
-            "stopAtConnect": false,
-
-            "externalConsole": false,
-            "internalConsoleOptions": "openOnSessionStart",
-            "logging": {
-                // "engineLogging": true,
-                "moduleLoad": true,
-                "exceptions": true,
-            },
-
-            "program": "${input:HW_LAUNCH_PROG}",
-            "args": [ "${input:HW_LAUNCH_ARGS}" ],
-
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description":  "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                },
-
-                { "text": "set index-cache directory ${workspaceFolder}/.cache/gdb" },
-                { "text": "set index-cache enabled on" },
-            ]
-        }
-
-    ],
-
-    "inputs": [ 
-        {
-            "id": "HW_LAUNCH_ARGS",
-            "type": "command",
-            "command": "extension.commandvariable.file.content",
-            "args": {
-                "fileName": "${workspaceFolder}/build/launchInput.json",
-                "json": "content.HW_LAUNCH_ARGS",
-            }
-        },
-        {
-            "id": "HW_LAUNCH_PROG",
-            "type": "command",
-            "command": "extension.commandvariable.file.content",
-            "args": {
-                "fileName": "${workspaceFolder}/build/launchInput.json",
-                "json": "content.HW_LAUNCH_PROG",
-            }
-        },
-        {
-            "id": "HW_LAUNCH_CWD",
-            "type": "command",
-            "command": "extension.commandvariable.file.content",
-            "args": {
-                "fileName": "${workspaceFolder}/build/launchInput.json",
-                "json": "content.HW_LAUNCH_CWD",
-            }
         }
     ]
 }
