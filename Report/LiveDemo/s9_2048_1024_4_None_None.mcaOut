@@ -1,0 +1,275 @@
+Iterations:        100
+Instructions:      11700
+Total Cycles:      10183
+Total uOps:        21900
+
+Dispatch Width:    6
+uOps Per Cycle:    2.15
+IPC:               1.15
+Block RThroughput: 72.0
+
+
+Instruction Info:
+[1]: #uOps
+[2]: Latency
+[3]: RThroughput
+[4]: MayLoad
+[5]: MayStore
+[6]: HasSideEffects (U)
+
+[1]    [2]    [3]    [4]    [5]    [6]    Instructions:
+ 1      1     1.00                        vmovd	%edi, %xmm0
+ 1      3     1.00                        vpbroadcastd	%xmm0, %ymm0
+ 1      1     0.50                        leaq	assign+2016(%rip), %rax
+ 1      0     0.17                        xorl	%ecx, %ecx
+ 1      0     0.17                        xorl	%edx, %edx
+ 2      1     1.00           *            vmovdqu	%ymm0, -2016(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1984(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1952(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1920(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1888(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1856(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1824(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1792(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1760(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1728(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1696(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1664(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1632(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1600(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1568(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1536(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1504(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1472(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1440(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1408(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1376(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1344(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1312(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1280(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1248(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1216(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1184(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1152(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1120(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1088(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1056(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -1024(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -992(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -960(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -928(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -896(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -864(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -832(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -800(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -768(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -736(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -704(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -672(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -640(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -608(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -576(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -544(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -512(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -480(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -448(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -416(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -384(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -352(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -320(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -288(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -256(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -224(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -192(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -160(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -128(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -96(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -64(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, -32(%rax,%rdx,4)
+ 2      1     1.00           *            vmovdqu	%ymm0, (%rax,%rdx,4)
+ 1      1     0.25                        addq	$512, %rdx
+ 1      1     0.25                        cmpq	$1024, %rdx
+ 1      1     0.50                        jne	.LBB0_2
+ 1      1     0.25                        incq	%rcx
+ 1      1     0.25                        addq	$4096, %rax
+ 1      1     0.25                        cmpq	$2048, %rcx
+ 1      1     0.50                        jne	.LBB0_1
+ 4      0     0.67                  U     vzeroupper
+ 3      7     1.00                  U     retq
+ 3      2     1.00           *            pushq	%rbx
+ 1      1     0.25                        subq	$32, %rsp
+ 1      1     0.50                        leaq	assign(%rip), %rdi
+ 1      1     0.50                        leaq	assign+4096(%rip), %rsi
+ 4      3     1.00                        callq	init_memory@PLT
+ 1      1     0.25                        movl	$8, %edi
+ 4      3     1.00                        callq	example
+ 1      1     0.50                        leaq	16(%rsp), %rdi
+ 1      0     0.17                        xorl	%esi, %esi
+ 4      3     1.00                        callq	gettimeofday@PLT
+ 1      1     0.25                        movl	$512, %ebx
+ 1      1     0.25                        movl	$8, %edi
+ 4      3     1.00                        callq	example
+ 1      1     0.25                        decl	%ebx
+ 1      1     0.50                        jne	.LBB1_1
+ 1      1     0.25                        movq	%rsp, %rdi
+ 1      0     0.17                        xorl	%esi, %esi
+ 4      3     1.00                        callq	gettimeofday@PLT
+ 1      1     0.50                        leaq	assign(%rip), %rdi
+ 1      1     0.50                        leaq	assign+4096(%rip), %rsi
+ 4      3     1.00                        callq	digest_memory@PLT
+ 1      5     0.50    *                   movq	(%rsp), %rax
+ 1      5     0.50    *                   movq	8(%rsp), %rcx
+ 2      6     0.50    *                   subq	16(%rsp), %rax
+ 2      6     0.50    *                   subq	24(%rsp), %rcx
+ 1      3     1.00                        imulq	$1000, %rax, %rax
+ 2      5     1.00                        vcvtsi2sd	%rax, %xmm0, %xmm0
+ 2      5     1.00                        vcvtsi2sd	%rcx, %xmm1, %xmm1
+ 2      19    4.00    *                   vdivsd	.LCPI1_0(%rip), %xmm1, %xmm1
+ 1      4     0.50                        vaddsd	%xmm0, %xmm1, %xmm0
+ 2      9     0.50    *                   vaddsd	.LCPI1_1(%rip), %xmm0, %xmm0
+ 2      6     1.00                        vcvttsd2si	%xmm0, %rsi
+ 1      1     0.50                        leaq	.L.str(%rip), %rdi
+ 1      0     0.17                        xorl	%eax, %eax
+ 4      3     1.00                        callq	printf@PLT
+ 1      0     0.17                        xorl	%eax, %eax
+ 1      1     0.25                        addq	$32, %rsp
+ 2      6     0.50    *                   popq	%rbx
+ 3      7     1.00                  U     retq
+
+
+Resources:
+[0]   - SKLDivider
+[1]   - SKLFPDivider
+[2]   - SKLPort0
+[3]   - SKLPort1
+[4]   - SKLPort2
+[5]   - SKLPort3
+[6]   - SKLPort4
+[7]   - SKLPort5
+[8]   - SKLPort6
+[9]   - SKLPort7
+
+
+Resource pressure per iteration:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    
+ -     4.00   14.01  14.01  27.50  27.50  72.00  14.99  12.99  26.00  
+
+Resource pressure by instruction:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    Instructions:
+ -      -      -      -      -      -      -     1.00    -      -     vmovd	%edi, %xmm0
+ -      -      -      -      -      -      -     1.00    -      -     vpbroadcastd	%xmm0, %ymm0
+ -      -      -     1.00    -      -      -      -      -      -     leaq	assign+2016(%rip), %rax
+ -      -      -      -      -      -      -      -      -      -     xorl	%ecx, %ecx
+ -      -      -      -      -      -      -      -      -      -     xorl	%edx, %edx
+ -      -      -      -      -      -     1.00    -      -     1.00   vmovdqu	%ymm0, -2016(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -1984(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1952(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -1920(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -1888(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1856(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -1824(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -1792(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1760(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -1728(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -1696(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1664(%rax,%rdx,4)
+ -      -      -      -      -      -     1.00    -      -     1.00   vmovdqu	%ymm0, -1632(%rax,%rdx,4)
+ -      -      -      -     0.01   0.99   1.00    -      -      -     vmovdqu	%ymm0, -1600(%rax,%rdx,4)
+ -      -      -      -     0.99    -     1.00    -      -     0.01   vmovdqu	%ymm0, -1568(%rax,%rdx,4)
+ -      -      -      -      -     0.01   1.00    -      -     0.99   vmovdqu	%ymm0, -1536(%rax,%rdx,4)
+ -      -      -      -     0.01   0.99   1.00    -      -      -     vmovdqu	%ymm0, -1504(%rax,%rdx,4)
+ -      -      -      -     0.99    -     1.00    -      -     0.01   vmovdqu	%ymm0, -1472(%rax,%rdx,4)
+ -      -      -      -      -     0.01   1.00    -      -     0.99   vmovdqu	%ymm0, -1440(%rax,%rdx,4)
+ -      -      -      -     0.01   0.99   1.00    -      -      -     vmovdqu	%ymm0, -1408(%rax,%rdx,4)
+ -      -      -      -     0.99    -     1.00    -      -     0.01   vmovdqu	%ymm0, -1376(%rax,%rdx,4)
+ -      -      -      -      -     0.01   1.00    -      -     0.99   vmovdqu	%ymm0, -1344(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1312(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -1280(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -1248(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1216(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -1184(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -1152(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1120(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -1088(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -1056(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -1024(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -992(%rax,%rdx,4)
+ -      -      -      -      -     0.02   1.00    -      -     0.98   vmovdqu	%ymm0, -960(%rax,%rdx,4)
+ -      -      -      -     0.02   0.98   1.00    -      -      -     vmovdqu	%ymm0, -928(%rax,%rdx,4)
+ -      -      -      -     0.98    -     1.00    -      -     0.02   vmovdqu	%ymm0, -896(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -864(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -832(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -800(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -768(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -736(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -704(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -672(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -640(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -608(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -576(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -544(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -512(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -480(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -448(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -416(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -384(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -352(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -320(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -288(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -256(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -224(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -192(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -160(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -128(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, -96(%rax,%rdx,4)
+ -      -      -      -     0.01   0.98   1.00    -      -     0.01   vmovdqu	%ymm0, -64(%rax,%rdx,4)
+ -      -      -      -     0.98   0.01   1.00    -      -     0.01   vmovdqu	%ymm0, -32(%rax,%rdx,4)
+ -      -      -      -     0.01   0.01   1.00    -      -     0.98   vmovdqu	%ymm0, (%rax,%rdx,4)
+ -      -      -      -      -      -      -      -     1.00    -     addq	$512, %rdx
+ -      -      -      -      -      -      -      -     1.00    -     cmpq	$1024, %rdx
+ -      -     1.00    -      -      -      -      -      -      -     jne	.LBB0_2
+ -      -     0.01    -      -      -      -     0.99    -      -     incq	%rcx
+ -      -      -     0.99    -      -      -     0.01    -      -     addq	$4096, %rax
+ -      -      -     0.01    -      -      -      -     0.99    -     cmpq	$2048, %rcx
+ -      -      -      -      -      -      -      -     1.00    -     jne	.LBB0_1
+ -      -      -      -      -      -      -      -      -      -     vzeroupper
+ -      -      -      -     0.98   0.02    -     1.00   1.00    -     retq
+ -      -     0.01    -     0.01   0.98   1.00    -     0.99   0.01   pushq	%rbx
+ -      -      -      -      -      -      -     0.99   0.01    -     subq	$32, %rsp
+ -      -      -     1.00    -      -      -      -      -      -     leaq	assign(%rip), %rdi
+ -      -      -      -      -      -      -     1.00    -      -     leaq	assign+4096(%rip), %rsi
+ -      -     1.00   0.99   0.98   0.01   1.00    -     0.01   0.01   callq	init_memory@PLT
+ -      -     1.00    -      -      -      -      -      -      -     movl	$8, %edi
+ -      -     1.00    -      -     0.01   1.00    -     1.00   0.99   callq	example
+ -      -      -     0.99    -      -      -     0.01    -      -     leaq	16(%rsp), %rdi
+ -      -      -      -      -      -      -      -      -      -     xorl	%esi, %esi
+ -      -     1.00   0.01   0.01   0.98   1.00   0.98   0.01   0.01   callq	gettimeofday@PLT
+ -      -      -     0.01    -      -      -      -     0.99    -     movl	$512, %ebx
+ -      -     0.01    -      -      -      -     0.99    -      -     movl	$8, %edi
+ -      -     1.00   0.99   0.98    -     1.00    -     0.01   0.02   callq	example
+ -      -      -      -      -      -      -      -     1.00    -     decl	%ebx
+ -      -     1.00    -      -      -      -      -      -      -     jne	.LBB1_1
+ -      -      -      -      -      -      -     1.00    -      -     movq	%rsp, %rdi
+ -      -      -      -      -      -      -      -      -      -     xorl	%esi, %esi
+ -      -     0.01   0.99    -     0.02   1.00   0.01   0.99   0.98   callq	gettimeofday@PLT
+ -      -      -      -      -      -      -     1.00    -      -     leaq	assign(%rip), %rdi
+ -      -      -     1.00    -      -      -      -      -      -     leaq	assign+4096(%rip), %rsi
+ -      -     0.99   0.01   0.02   0.98   1.00    -     1.00    -     callq	digest_memory@PLT
+ -      -      -      -     0.99   0.01    -      -      -      -     movq	(%rsp), %rax
+ -      -      -      -     0.50   0.50    -      -      -      -     movq	8(%rsp), %rcx
+ -      -      -      -     0.50   0.50    -     1.00    -      -     subq	16(%rsp), %rax
+ -      -      -     0.99   0.50   0.50    -     0.01    -      -     subq	24(%rsp), %rcx
+ -      -      -     1.00    -      -      -      -      -      -     imulq	$1000, %rax, %rax
+ -      -      -     1.00    -      -      -     1.00    -      -     vcvtsi2sd	%rax, %xmm0, %xmm0
+ -      -     0.99   0.01    -      -      -     1.00    -      -     vcvtsi2sd	%rcx, %xmm1, %xmm1
+ -     4.00   1.00    -     0.49   0.51    -      -      -      -     vdivsd	.LCPI1_0(%rip), %xmm1, %xmm1
+ -      -     0.99   0.01    -      -      -      -      -      -     vaddsd	%xmm0, %xmm1, %xmm0
+ -      -     0.01   0.99   0.51   0.49    -      -      -      -     vaddsd	.LCPI1_1(%rip), %xmm0, %xmm0
+ -      -     1.00   1.00    -      -      -      -      -      -     vcvttsd2si	%xmm0, %rsi
+ -      -      -      -      -      -      -     1.00    -      -     leaq	.L.str(%rip), %rdi
+ -      -      -      -      -      -      -      -      -      -     xorl	%eax, %eax
+ -      -     1.00    -      -      -     1.00   0.01   0.99   1.00   callq	printf@PLT
+ -      -      -      -      -      -      -      -      -      -     xorl	%eax, %eax
+ -      -      -     1.00    -      -      -      -      -      -     addq	$32, %rsp
+ -      -      -     0.01   0.51   0.49    -     0.99    -      -     popq	%rbx
+ -      -     0.99   0.01   0.49   0.51    -      -     1.00    -     retq
