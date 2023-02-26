@@ -42,7 +42,7 @@ Our project is available to download with the following links:
 
 |                |                    |                                                           |                                            |                                       |
 | -              | -                  | -                                                         | -                                          | -                                     |
-| Kyle Astroth   | kastroth@umich.edu | [LinkedIn](https://www.linkedin.com/in/kyle-astroth/)     | [GitHub](https://github.com/kyleastroth)   | [Website](https://kastroth.github.io) |
+| Kyle Astroth   | kastroth@umich.edu | [LinkedIn](https://www.linkedin.com/in/kyle-astroth/)     | [GitHub](https://github.com/kyleastroth)   |  |
 | Sam Gonzalez   | samgonza@umich.edu | [LinkedIn](https://www.linkedin.com/in/samgonza/)         | [GitHub](https://github.com/samrg123)      | [Website](https://samrg123.com/)      |
 | Carson Hoffman | hoffcar@umich.edu  | [LinkedIn](https://linkedin.com/in/carson-hoffman)        | [GitHub](https://github.com/CarsonHoffman) |                                       |
 | Xiangyu Qin    | qinx@umich.edu     | [LinkedIn](https://linkedin.com/in/xiangyu-qin-503783187) | [GitHub](https://github.com/tommy2022)     |                                       |
